@@ -1,0 +1,322 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4a5568;
+    background-color: #f7fafc;
+  }
+  
+  .container {
+    max-width: 1900px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  /* Navbar (barra de navegación) */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4CAF50;
+}
+
+.nav-links button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 1rem;
+}
+
+.nav-links button:hover {
+    background-color: #45a049;
+}
+/* Estilo básico de los botones */
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Estilos específicos de cada botón */
+.register {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+}
+
+.login {
+  background-color: #008CBA; /* Azul */
+  color: white;
+}
+
+/* Efecto al pasar el ratón (hover) */
+button:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  opacity: 0.9; /* Reduce un poco la opacidad */
+}
+
+/* Efecto al hacer clic (active) */
+button:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño */
+  opacity: 0.8; /* Reduce un poco más la opacidad */
+}
+
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .nav-links button {
+        background-color: #333;
+        color: white;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .menu-icon .bar {
+        width: 25px;
+        height: 4px;
+        background-color: white;
+        margin: 5px 0;
+    }
+}
+
+/* Menú móvil */
+
+/*.menu-icon {
+    display: none;
+    color: black;
+}*/
+
+.menu-overlay.active {
+    display: block;
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+  
+  /* Sección del mapa */
+  .map-section {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .map-placeholder {
+    background-color: #e2e8f0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a5568;
+    font-size: 1.25rem;
+  }
+  
+  /* Sección de información */
+  .info-section {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .image-placeholder {
+    background-color: #cbd5e0;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #4a5568;
+  }
+  
+  .info-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .info-content {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .info-text p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-text p::before {
+    content: attr(data-icon);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .info-section h3 {
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .info-text-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .info-text-row p {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Sección de contenido */
+  .content-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .image-placeholder.large {
+    height: 250px;
+    flex: 1;
+  }
+  
+  /* Sección de imágenes horizontales debajo del mapa */
+  .horizontal-images {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .image-with-text {
+    text-align: center;
+  }
+  
+  .image-with-text p {
+    margin-top: 0.5rem;
+  }
+  
+  /* Footer (pie de página) */
+  .footer {
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #cbd5e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #4a5568;
+  }
+  
+  .footer h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mensaje de redirección */
+  .redirect-message {
+    margin-top: 1rem;
+    color: #2b6cb0;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa con OpenLayers</title>
+  
+  <!-- Estilos de OpenLayers desde CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css">
+  
+  <style>
+    /* Ajustes del contenedor del mapa */
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa de OpenLayers</h1>
+  
+  <!-- Contenedor del mapa -->
+  <div id="map"></div>
+  
+  <!-- Carga OpenLayers desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js"></script>
+  
+  <script>
+    // Configuración del mapa usando OpenLayers
+    const map = new ol.Map({
+      target: 'map', // ID del div donde irá el mapa
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM() // Capa base de OpenStreetMap
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([0, 0]), // Coordenadas iniciales
+        zoom: 2
+      })
+    });
+  </script>
+</body>
+</html>
